@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>edit</h1>
+<h2>saved videos</h2>
+
+
+	<form action="#" method="post">
+		{% csrf_token %}
+{% for book in books %}	 
+	 
+	
+	
+	
+	<br><a href="{{book.pdf.url}}" class="btn" target="_blank">download</a>
+<input type="text" value="{{book.pdf.url}}" name="tval"/>
+	
+{% endfor%}
+<hr>
+<input type="submit" class="btn" value="Click" name="ebtn">
+</form>
+{% endblock %}
+
+<!--
+
+-->

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>list edit</h1>
+<h2>saved videos</h2>
+
+
+	<form action="#" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+{% for book in books %}	 
+	 
+	
+
+	
+	<br><a href="{{book.pdf.url}}" class="btn" target="_blank">Download</a>
+<input type="button" value="{{book.pdf.url}}" name='{{ book.pdf_path }}'/>
+	
+{% endfor %}
+<hr>
+<input type="submit" class="btn" value="Click" name="ebtn">
+</form>
+{% endblock %}

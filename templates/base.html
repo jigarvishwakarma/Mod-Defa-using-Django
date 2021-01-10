@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+</head>
+<body bgcolor="grey">
+	<div class="navbar bg-danger m-auto">
+	<div>
+			<h1>
+				RankStream
+			</h1>
+		</div>
+		<div class="bg-light float-right">
+			
+			{% if user.is_authenticated %}
+
+			<form action="{% url 'accounts:logout' %}" method="post">
+				{% csrf_token %}
+				
+				<button type="submit" class="btn-sm btn-light">Logout {{user}}</button>
+			
+			</form>
+			{% else %}
+
+			<a href="{% url 'accounts:login' %}" class="btn-sm btn-light">Login</a>
+			<a href="{% url 'accounts:register' %}" class="btn-sm btn-light">Register</a>
+			{% endif %}
+			
+			<a href="{% url 'defa:list' %}" class="btn btn-light">
+				Create video
+			</a>
+	</div>
+
+	</div>
+	<!--
+	<div>
+		
+		
+		
+	</div>-->
+	
+	{% block content %}
+
+	{% endblock %}
+</body>
+</html>

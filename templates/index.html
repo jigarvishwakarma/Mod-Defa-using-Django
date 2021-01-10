@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<script type="text/javascript">
+
+	function gengrid()
+    {
+    	
+        var i=0;
+        var no_of_vid= document.getElementById('noofvideo').value;
+        var newdiv;
+        var divIdName;
+        var arrid = [];
+        for(i=1;i<=no_of_vid;i++)
+        {
+            newdiv = document.createElement('div');
+            divIdName = 'clip'+i;
+            newdiv.setAttribute('name',divIdName);
+            newdiv.innerHTML ='<input type="file" id="vid_id" name="filename'+i+'">';
+            document.body.appendChild(newdiv);
+            arrid.push('filename'+i);
+            console.log(arrid)
+        }
+    }
+	/*
+    function checkid()
+    {
+    	var i=0;
+    	var n= document.getElementById('noofvideo').value;
+    	var arr=[]
+        
+    	
+    	for(i=1;i<=n;i++)
+        {
+    		var no_of_vid= document.getElementById('vid_id'+i).value; 
+        	arr.push(no_of_vid)
+            arrid.push('vid_id'+i)
+        
+        	console.log(no_of_vid);
+        
+
+        }
+        alert(arrid)
+
+    }*/
+/*
+    function ddd(){
+                var i=0;
+                var num_stud=8;
+                var newdiv;
+                var divIdName;
+                for(i=1;i<=num_stud;i++)
+                {
+                    newdiv = document.createElement('div');
+                    divIdName = '50'+i;
+                    newdiv.setAttribute('id',divIdName);
+                    newdiv.innerHTML ='<div id="box'+i+'">Testing 123</div>';
+                    document.body.appendChild(newdiv);
+                }
+            }*/
+
+</script>
+
+
+<h1> jigar </h1>
+<form method="post" action="" enctype="multipart/form-data">
+	{% csrf_token %}
+	<input type="text" id="nameofvideo" placeholder="name of video" name="intro" ><br>
+	<input type="number" id="noofvideo" placeholder="no of video"  name="num"><br>
+	<input type="button" name="startediting" value="start editing" onclick="gengrid()"><br>
+	<input type="submit" name="submit">
+	<input type="file" name="filename">
+	<!--
+	<input type="text" value=" ">
+	<input type="number" value="">
+	<br>
+	<input type="file" name="videofile">
+	
+-->
+
+
+</form>
+{% if name %}
+<h2>{{name}}</h2>
+{% endif %}
+
+<!--
+{% if edited_video %}
+<video>
+	<source src="{{edited_video}}" type="">
+</video>
+{% endif %}
+-->
+
+
+{% endblock %}

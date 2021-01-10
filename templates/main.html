@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Home</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 p-3">
+{% for i in videodetails %}
+<a href="{% url 'watch' i.id %}">
+<img src="{{i.video_thum.url}}" height="220px" width="400px">
+<h2>{{i.video_name}}</h2>	
+</a>
+
+
+{% endfor %}
+</div>
+</div>
+</div>
+{% endblock %}

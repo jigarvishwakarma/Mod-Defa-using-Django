@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Book</h1>
+{% for book in books %}
+	{{book.title}}
+	{{book.author}}
+	<a href="{{book.pdf.url}}" class="btn" target="_blank">download</a>
+	
+	<br>
+{% endfor%}
+<a href="{% url 'upload_list' %}">go</a>
+<a href="{% url 'edit' %}">print</a>
+{% endblock %}

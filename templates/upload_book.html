@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Upload</h1>
+<form method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	
+	{{ form }}
+	
+	<br>
+	<div class="text-lg-center">
+		<input type="submit" class="btn btn-group-lg rounded-0 p-2 m-2 bg-danger" value="POST" name=""><br>
+	</div>
+	
+	
+</form>
+{% endblock %}
+<!--{% for i in "x"|rjust:"3" %}{% endfor %}-->

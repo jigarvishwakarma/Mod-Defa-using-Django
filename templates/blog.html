@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>blog</h1>
+{{form}}
+{{formimg}}
+<br>
+		{% for post in posts %}
+		<video height="100px" width="100px">
+			<source src="{{post.videos.url}}" type="">
+		</video>
+		<p>{{post.title}}</p>
+		<br>
+		<p>{{post.desc}}</p>
+		<a href="{% url 'detail' post.id %}">Click here</a>
+		<br>
+		{% endfor %}
+{% endblock %}
+

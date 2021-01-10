@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="row row-cols-1 row-cols-lg-4">
+		{% for i in obj %}
+	  <div class="col mb-4">
+	        <div class="card ">
+	      <div class="card-body">
+	      <video controls="" autoplay style="width: 100%">
+	      	<source src="{{i.video_path}}" type="">
+	      </video>
+	        <h1 class="card-title text-center">{{i.video_name}}</h1>
+	      </div>
+	    </div>
+	  </div>{% endfor %}
+	  
+	
+	</div>
+{% endblock %}

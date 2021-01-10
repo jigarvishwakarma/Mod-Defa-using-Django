@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="row row-cols-1 row-cols-lg-4">
+		{% for i in books %}
+	  <div class="col mb-4">
+	        <div class="card ">
+	      <div class="card-body">
+	      <img src="{{i.thum.url}}" height="400" width="200" class="card-img-top" alt="..." style="padding: 10px;">
+	        <h1 class="card-title text-center">{{i.title}}</h1>
+	        <p class="card-text text-center">{{i.author}}.</p>
+	        <a class="btn btn-danger text-center" href="{{i.pdf.url}}" target="_blank">read now</a>
+	      </div>
+	    </div>
+	  </div>{% endfor %}
+	  
+	
+	</div>
+{% endblock %}
+
+
+
+
+
+<!--
+<h1>Latest videos</h1>
+
+	<table>
+		<tr>
+			<th>
+				Video title
+			</th>
+			<th>
+				Video creator
+			</th>
+			<th>
+				Video thubmail
+			</th>
+		</tr>
+		{% for book in books %}
+		<tr>
+			<th>
+				{{book.title}}
+			</th>
+			<th>
+				{{book.author}}
+			</th>
+			<th>
+				<video height="100px" width="200px">
+					<source src="{{book.pdf.url}}" type="">
+				</video>
+				
+			</th>
+		</tr>
+		{% endfor %}
+	</table>
+	
+	
+	<br>-->
